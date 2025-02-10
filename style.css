@@ -1,0 +1,329 @@
+@keyframes glowingBackground { 
+    0% {
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.8), rgba(255, 0, 0, 0.8));
+        transform: scale(1);
+    }
+    50% {
+        background: radial-gradient(circle, rgba(0, 255, 255, 0.8), rgba(0, 0, 255, 0.8)); /* Cyan and Blue */
+        transform: scale(1.05); /* Zoom effect */
+    }
+    100% {
+        background: radial-gradient(circle, rgba(255, 223, 0, 0.8), rgba(128, 0, 128, 0.8)); /* Purple and Gold */
+
+
+
+    }
+}
+/* Welcome screen background */
+#welcome-screen {
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.8), rgba(255, 0, 0, 0.8));
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: glowingBackground 5s ease-in-out infinite; /* Pulsing background */
+    overflow: hidden; /* Prevent overflow issues */
+}
+/* Welcome text styling */
+.welcome-text {
+    font-size: 4rem; /* Default size */
+    font-weight: bold;
+    color: white;
+    text-align: center; /* Center align the text */
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8); /* Glowing text */
+    animation: textZoomIn 3s ease-out forwards;
+    word-wrap: break-word; /* Wrap text if needed */
+    padding: 0 10px; /* Add padding for smaller screens */
+}
+/* Text zoom-in animation */
+@keyframes textZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* Main content (hidden initially) */
+#main-content {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+    .welcome-text {
+        font-size: 2.5rem; /* Smaller font size for tablets */
+    }
+}
+@media (max-width: 480px) {
+    .welcome-text {
+        font-size: 1.8rem; /* Smaller font size for mobile phones */
+    }
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Background for the Header */
+.one {
+    background-color: #9c4f96; /* Soft purple shade */
+    padding: 20px 0;
+    animation: fadeIn 1s ease-in-out;
+}
+/* Logo and header styles */
+.logo-img {
+    animation: fadeIn 1s ease-in-out;
+}
+/* Search Section Styles */
+.search-input {
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 80%;
+    transition: all 0.3s ease;
+}
+.search-btn {
+    border-radius: 50%;
+    background-color: #ff5c8d; /* Light pink */
+    border: none;
+    padding: 12px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+.search-btn:hover {
+    transform: scale(1.1);
+}
+.animate-search input:focus {
+    border-color: #ff5c8d; /* Light pink border on focus */
+    outline: none;
+}
+/* Button styles */
+.custom, .custom1, .custom2, .custom3 {
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.custom {
+    background-color: #fdcb6e; /* Soft yellow */
+    color: white;
+}
+.custom1 {
+    background-color: #fab1a0; /* Light coral */
+    color: white;
+}
+.custom2 {
+    background-color: #6c5ce7; /* Soft indigo */
+    color: white;
+}
+.custom3 {
+    background-color: #d63031; /* Warm red */
+    color: white;
+}
+/* Buttons */
+.custom:hover, .custom1:hover, .custom2:hover, .custom3:hover {
+    background-color: #dfe6e9; /* Light grey */
+    transform: scale(1.05);
+}
+/* Course Box Styles */
+.course-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 15px;
+    height: 250px; /* Fixed height */
+    word-wrap: break-word;
+}
+/* Hover effect for course boxes */
+.course-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.course-box h3 {
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.course-box a {
+    text-decoration: none;
+    color: #333;
+}
+.course-box a:hover {
+    color: #9c4f96; /* Purple color for hover */
+}
+/* Footer Styling */
+footer {
+    background-color: #2d3436; /* Dark grey */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+footer h1 {
+    margin-bottom: 15px;
+}
+footer p {
+    font-size: 16px;
+}
+/* Button Fade-in */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .logo-img {
+        width: 80px;
+        height: 70px;
+    }
+    .search-input {
+        width: 100%;
+    }
+    .course-box {
+        padding: 15px;
+        height: auto;
+    }
+    .custom, .custom1, .custom2, .custom3 {
+        padding: 10px 15px;
+    }
+    /* Stack the buttons on top of each other for smaller screens */
+    .btn-group-lg {
+        display: block;
+        margin-top: 10px;
+    }
+    /* Stack course boxes in one column */
+    .col-md-6 {
+        width: 100% !important;
+    }
+    .course-box h3 {
+        font-size: 16px;
+    }
+    .fade-in {
+        opacity: 1 !important;
+        animation: none;
+    }
+}
+/* Media Query for extra small screens (Mobile) */
+@media screen and (max-width: 480px) {
+    .custom, .custom1, .custom2, .custom3 {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    .course-box h3 {
+        font-size: 14px;
+    }
+}
+/* Gradient Background Animation */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+.center{
+    background: linear-gradient(45deg, #ff5c8d, #9c4f96, #fdcb6e);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+
+.course-box {
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.course-box:hover {
+    transform: scale(1.05); /* Slightly enlarges the box */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+a.text-decoration-none:hover .course-box {
+    text-decoration: none; /* Ensures text inside doesn't get underlined */
+}
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+
+  
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Reduced height */
+    background-color: #3f023a;
+    color: #fff;
+    text-align: center;
+    z-index: 1000; /* Ensures header stays on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animated-text {
+    font-size: 900px; /* Adjusted size */
+    font-weight: bold;
+    animation: fontsize 2s ease-in-out infinite;
+}
+
+@keyframes fontsize {
+    0% {
+        font-size: 40px;
+        transform: scale(1);
+    }
+    50% {
+        font-size: 50px;
+        transform: scale(1.1);
+    }
+    100% {
+        font-size: 40px;
+        transform: scale(1);
+    }
+}
+
+/* Ensure content starts below the fixed header */
+#main-content{
+    margin-top: 100px; /* Adjust based on header height */
+}
